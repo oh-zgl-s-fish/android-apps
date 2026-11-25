@@ -1,0 +1,9 @@
+<resources>
+    <!-- 只用淡入淡出：tab 切换和小页推入都不做左右滑 -->
+    <style name="Anim.Installment" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/fade_in_fast</item>
+        <item name="android:activityOpenExitAnimation">@anim/fade_out_fast</item>
+        <item name="android:activityCloseEnterAnimation">@anim/fade_in_fast</item>
+        <item name="android:activityCloseExitAnimation">@anim/fade_out_fast</item>
+    </style>
+</resources>

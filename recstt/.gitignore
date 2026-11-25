@@ -1,0 +1,24 @@
+# 构建产物
+build/
+.gradle/
+.kotlin/
+*.apk
+*.apk.idsig
+*.ap_
+*.dex
+
+# 本机配置（含 SDK 路径，随机器而变）
+local.properties
+
+# 签名密钥：绝不入库
+keystore.jks
+*.jks
+*.keystore
+
+# 隧道二进制体积大，另行分发，不入库
+native/*/*.so
+
+# 编辑器/系统
+.idea/
+*.iml
+.DS_Store

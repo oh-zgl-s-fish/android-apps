@@ -1,0 +1,20 @@
+# 构建产物
+build/
+.gradle/
+.kotlin/
+*.apk
+*.aab
+
+# 本机配置与密钥（绝不入库）
+local.properties
+keystore.jks
+*.jks
+*.keystore
+
+# 隧道二进制（体积大，另行分发）
+native/*/*.so
+
+# 编辑器/系统
+.idea/
+*.iml
+.DS_Store

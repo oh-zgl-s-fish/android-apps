@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" xmlns:tools="http://schemas.android.com/tools" />
+
+    <!--
+        转写服务是局域网内的明文 HTTP（http://192.0.2.10:54087）。
+        targetSdk 36（Android 9+）默认禁止明文 HTTP，HttpURLConnection 会抛
+        "Cleartext HTTP traffic not permitted"。
+        之前"局域网不通、WG 通"就是这个原因：
+          局域网走 HttpURLConnection → 被明文策略拦下
+          WG   走裸 Socket CONNECT   → 裸 socket 不受该策略约束
+        只对局域网/内网地址开放明文，不全局放开。
+    -->
+    <application
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:icon="@drawable/ic_app"
+        android:theme="@style/AppTheme"
+        android:allowBackup="false"
+        android:extractNativeLibs="true"
+        android:supportsRtl="false">
+
+        <activity android:name=".ui.MainActivity" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".ui.ReaderActivity" android:exported="false" />
+        <activity android:name=".ui.TemplatesActivity" android:exported="false" />
+        <activity android:name=".ui.TemplateEditActivity" android:exported="false" />
+        <activity android:name=".ui.AppearActivity" android:exported="false" />
+        <activity android:name=".ui.SettingsActivity" android:exported="false" />
+
+        <service android:name=".svc.TranscribeService"
+            android:exported="false"
+            android:foregroundServiceType="dataSync" />
+    </application>
+</manifest>

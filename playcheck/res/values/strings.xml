@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">开游</string>
+    <string name="widget_name">开游打卡</string>
+    <string name="channel_ongoing">今日汇总（常驻）</string>
+    <string name="channel_ongoing_desc">状态栏显示今日打卡进度，可单独静音</string>
+    <string name="channel_alert">漏卡提醒</string>
+    <string name="channel_alert_desc">22:00 检查一次，只提醒没达标的游戏</string>
+    <string name="tab_today">今日</string>
+    <string name="tab_stats">统计</string>
+    <string name="tab_look">外观</string>
+    <string name="tab_settings">设置</string>
+</resources>

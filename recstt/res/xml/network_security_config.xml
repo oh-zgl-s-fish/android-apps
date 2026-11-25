@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <!--
+        转写服务跑在自建服务器上，地址由用户在设置里填写，通常是局域网/隧道内的明文 HTTP。
+        targetSdk 36 默认禁止明文，这里放开；如果你只连一个固定域名，建议改成
+        domain-config 只放行那一个，而不是全局放开。
+    -->
+    <base-config cleartextTrafficPermitted="true" />
+</network-security-config>

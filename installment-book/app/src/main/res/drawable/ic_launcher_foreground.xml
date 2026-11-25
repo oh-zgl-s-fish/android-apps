@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp" android:height="108dp"
+    android:viewportWidth="108" android:viewportHeight="108">
+    <!-- 缺口圆环：从右上缺口起，顺时针一圈 -->
+    <path android:pathData="M66.5,32.5 A28,28 0 1,0 75.5,45"
+        android:strokeColor="#FFFFFF" android:strokeWidth="6"
+        android:strokeLineCap="round" android:fillColor="#00000000" />
+    <!-- ¥：两撇 + 竖 + 两横 -->
+    <path android:pathData="M43,40 L54,54 M65,40 L54,54 M54,54 L54,70 M45,58.5 L63,58.5 M45,65 L63,65"
+        android:strokeColor="#FFFFFF" android:strokeWidth="5"
+        android:strokeLineCap="round" android:strokeLineJoin="round"
+        android:fillColor="#00000000" />
+</vector>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme" parent="@android:style/Theme.DeviceDefault.Light.NoActionBar">
+        <item name="android:windowBackground">@color/surface</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@color/surface</item>
+        <item name="android:windowLightStatusBar">true</item>
+
+        <!-- 本应用有自己的背景/明暗体系（Bg.bgDark），不能跟着系统深色模式走。
+             实测：系统 ui_night_mode=1 时，华为会把 round() 画出来的颜色再压暗一层，
+             三个筛选 chip 从 #E8DEF8 被压成 #5E6F95，字和底几乎同色。 -->
+        <item name="android:forceDarkAllowed">false</item>
+        <item name="android:isLightTheme">true</item>
+    </style>
+
+    <!-- 纯色模式 + 系统深色时用它。只管窗口底色和系统控件（AlertDialog/Switch 等），
+         自绘控件的颜色由 Ui 的深色调色板负责，两边必须同一套。 -->
+    <style name="AppTheme.Dark" parent="@android:style/Theme.DeviceDefault.NoActionBar">
+        <item name="android:windowBackground">@color/surface_dark</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@color/surface_dark</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar">false</item>
+        <item name="android:forceDarkAllowed">false</item>
+    </style>
+</resources>
